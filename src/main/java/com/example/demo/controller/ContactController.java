@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.Contact;
 import com.example.demo.service.ContactServiceImpl;
+import org.hibernate.service.spi.InjectService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -9,6 +11,7 @@ import java.util.List;
 @RequestMapping("/api/v1")
 public class ContactController {
 
+    @Autowired
     private ContactServiceImpl contactService;
 
     @PostMapping("/addContact")

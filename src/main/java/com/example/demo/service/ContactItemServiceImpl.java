@@ -4,9 +4,10 @@ import com.example.demo.entity.Contact;
 import com.example.demo.entity.ContactItem;
 import com.example.demo.repository.ContactItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class ContactItemServiceImpl implements ContactItemService {
     @Autowired
     private ContactItemRepository contactItemRepository;

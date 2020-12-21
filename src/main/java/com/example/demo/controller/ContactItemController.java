@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.ContactItem;
 import com.example.demo.service.ContactItemServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/v2")
 public class ContactItemController {
-
+    @Autowired
     private ContactItemServiceImpl itemService;
 
     @PostMapping("/addItem")
@@ -26,6 +27,7 @@ public class ContactItemController {
     public List<ContactItem> findAllItems(){
         return itemService.getContactItems();
     }
+
     @GetMapping("/items/{id}")
     public ContactItem getItemById(@PathVariable int id) {
         return itemService.getContactItemById(id);
